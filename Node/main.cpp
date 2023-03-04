@@ -1,7 +1,7 @@
 #include <iostream>
  
 using namespace std;
-//vy
+
 struct Node{
     int data;
     Node* pNext;
@@ -22,11 +22,14 @@ void inputLL(Node* &pHead){
             cur = pHead;
         }
         cur -> data = temp;
-        cur -> pNext = new Node;
-        cur = cur -> pNext;
         cin >> temp;
+        if (temp != 0){
+            cur -> pNext = new Node;
+            cur = cur -> pNext;
+        }else{
+            cur -> pNext = NULL;
+        }
     }
-    if (cur != NULL) cur -> pNext = NULL;
 }
  
 void displayLL(Node* pHead){
@@ -153,23 +156,28 @@ void MergeOrderedList(Node* &pHA, Node* &pHB, Node* &pHC){
         if (curA -> data < curB -> data){
             curC -> data = curA -> data;
             curC -> pNext = new Node;
+            curC = curC -> pNext;
             Node* tmp = curA;
             curA = curA -> pNext;
             delete tmp;
         }else{
             curC -> data = curB -> data;
             curC -> pNext = new Node;
+            curC = curC -> pNext;
             Node* tmp = curB;
             curB = curB -> pNext;
             delete tmp;
         } 
     }
-    if (pHA){
-        curC = pHA;
-        pHA = NULL;
+    if (!curA && !curB){
+        curC = NULL;
+    }
+    if (curA != NULL){
+        curC = curA;
+        curA = NULL;
     }else{
-        curC = pHB;
-        pHB = NULL;
+        curC = curB;
+        curB = NULL;
     }
 }
 int main(){
@@ -179,13 +187,13 @@ int main(){
     Node *pHC;
     int x;
     cin >> x;
-    // inputLL(pHA);
-    // inputLL(pHB);
-    // MergeOrderedList(pHA,pHB,pHC);
-    // displayLL(pHC);
-    // deleteLL(pHC);
-    inputLL(pHead);
+    inputLL(pHA);
+    inputLL(pHB);
+    MergeOrderedList(pHA,pHB,pHC);
+    displayLL(pHC);
+    deleteLL(pHC);
+    //inputLL(pHead);
     //InsertOrderList(pHead,x);
-    displayLL(pHead);
-    deleteLL(pHead);
+    //displayLL(pHead);
+    //deleteLL(pHead);
 }
