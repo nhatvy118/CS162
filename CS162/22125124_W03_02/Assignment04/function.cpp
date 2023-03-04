@@ -11,6 +11,10 @@ void sol(int* cnt, int n){
         cnt[a]++;
         if (cnt[a] > Max) Max = cnt[a];
     }
+    if (Max == 1){
+        cout << -1;
+        return;
+    }
     cout <<"the value of number has greatest frequency ";
     for (int i = 1; i < N ; i++){
         if (cnt[i] == Max) cout << i << " ";

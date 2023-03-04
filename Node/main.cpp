@@ -169,9 +169,6 @@ void MergeOrderedList(Node* &pHA, Node* &pHB, Node* &pHC){
             delete tmp;
         } 
     }
-    if (!curA && !curB){
-        curC = NULL;
-    }
     if (curA != NULL){
         curC = curA;
         curA = NULL;
