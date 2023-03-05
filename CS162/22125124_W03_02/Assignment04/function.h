@@ -1,3 +1,4 @@
 #pragma once
 
-void sol(int* cnt,int * a, int n);
+int count(int* cnt,int *a, int n);
+void display(int* cnt, int m);
