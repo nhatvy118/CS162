@@ -1,3 +1,3 @@
 #pragma once
 
-void sol(int* cnt, int n);
+void sol(int* cnt,int * a, int n);

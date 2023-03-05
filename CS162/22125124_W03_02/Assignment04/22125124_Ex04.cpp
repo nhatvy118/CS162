@@ -9,6 +9,7 @@ int main(){
     int n;
     cin >> n;
     int *cnt = new int[N];
-    sol(cnt,n);
+    int *a = new int[n + 1];
+    sol(cnt,a,n);
     return 0;
 }
