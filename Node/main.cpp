@@ -170,20 +170,21 @@ void MergeOrderedList(Node* &pHA, Node* &pHB, Node* &pHC){
         } 
     }
     if (curA != NULL){
-        curC = curA;
-        curA = NULL;
+        curC -> data = curA -> data;
+        curC -> pNext = curA -> pNext;
+        curA = nullptr;
+        
     }else{
-        curC = curB;
-        curB = NULL;
+        curC -> data = curA -> data;
+        curC -> pNext = curA -> pNext;
+        curA = nullptr;
     }
 }
 int main(){
     Node *pHead = NULL;
-    Node *pHA;
-    Node *pHB;
-    Node *pHC;
-    int x;
-    cin >> x;
+    Node *pHA = NULL;
+    Node *pHB = NULL;
+    Node *pHC = NULL;
     inputLL(pHA);
     inputLL(pHB);
     MergeOrderedList(pHA,pHB,pHC);
