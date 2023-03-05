@@ -10,6 +10,7 @@ int main(){
     cin >> n;
     int *cnt = new int[N];
     int *a = new int[n + 1];
-    sol(cnt,a,n);
+    int m = count(cnt,a,n);
+    display(cnt,m);
     return 0;
 }
