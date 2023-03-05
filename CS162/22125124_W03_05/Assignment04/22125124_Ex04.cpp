@@ -12,5 +12,7 @@ int main(){
     int *a = new int[n + 1];
     int m = count(cnt,a,n);
     display(cnt,m);
+    delete [] cnt;
+    delete [] a;
     return 0;
 }

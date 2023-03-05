@@ -9,5 +9,6 @@ int main(){
     int* a = new int[n + 1];
     input(a,n);
     cout << "the median of the list is " << median(a,n);
+    delete [] a;
     return 0;
 }
