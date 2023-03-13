@@ -55,18 +55,12 @@ void insertBeforeK(DNode* &pHead, int x, int k){
     DNode* cur = pHead;
     for (; cur != nullptr; cur = cur->pNext){
         if (cur->data == k){
-            cout <<"vt k " << cur << endl;
-            cout <<"vt truoc k " << cur -> pPrev << endl;
             DNode* newNode = new DNode;
-            cout <<"vt newnode " << newNode << endl;
             newNode->data = x;
             newNode->pPrev = cur -> pPrev;
             newNode->pNext = cur;
             cur -> pPrev -> pNext = newNode;
             cur -> pPrev = newNode;
-           
-            cout <<"newnode pre " << newNode->pPrev << endl;
-            cout <<"newnode next " << newNode->pNext << endl;
             break;
         }
     }
